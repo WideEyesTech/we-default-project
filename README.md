@@ -24,4 +24,4 @@ Run dev server: `npm start`
 
 Build for production: `npm run build`
 
-test: `npm test`
+<!-- test: `npm test` -->
