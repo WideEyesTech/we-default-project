@@ -25,8 +25,8 @@ Run dev server: `npm start`
 
 Build for production: `npm run build`
 
-run tests: `npm test`
+Run tests: `npm test`
 
-watch over tests on file change: `npm run test:watch`
+Watch over tests on file change: `npm run test:watch`
 
 <!-- test: `npm test` -->
