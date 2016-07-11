@@ -16,7 +16,7 @@ In development.
 **TODO:**
 
 1. Server rendering
-2. test actions
+2. Add tests for actions and reducers
 
 ## Usage
 
