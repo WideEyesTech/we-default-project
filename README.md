@@ -4,7 +4,7 @@
 
 In development.
 
-Features:
+**Features:**
 
 1. React components
 2. Dynamic routes with react-router and Webpack code splitting
@@ -13,9 +13,10 @@ Features:
 5. Authentication with [redux-auth-wrapper](https://github.com/mjrussell/redux-auth-wrapper)
 6. Tests with [Ava](https://github.com/avajs) + [Enzyme](https://github.com/airbnb/enzyme)
 
-TODO:
+**TODO:**
 
 1. Server rendering
+2. test actions
 
 ## Usage
 
