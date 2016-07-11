@@ -31,22 +31,19 @@ module.exports = {
         loader: 'babel',
         query: {
           presets: ['es2015', 'react'],
-          plugins: ['transform-class-properties']
+          plugins: ['transform-class-properties', 'transform-object-rest-spread']
         }
       },
       {
-        exclude: /node_modules/,
         test: /\.html$/,
         loader: 'html'
       },
       {
-        exclude: /node_modules/,
         loader: 'file?name=assets/[name].[hash].[ext]',
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
         loader: ExtractTextPlugin.extract('style', 'css!postcss')
       }
     ]

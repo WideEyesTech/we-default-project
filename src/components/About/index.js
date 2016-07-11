@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 
-const About = () =>
-  <h1>About</h1>
+const About = (props, {user}) =>
+  <h1>About {user.company}</h1>
+
+About.contextTypes = {
+  user: PropTypes.object.isRequired
+}
 
 module.exports = About

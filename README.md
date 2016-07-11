@@ -9,12 +9,13 @@ Features:
 1. React components
 2. Dynamic routes with react-router and Webpack code splitting
 3. PostCSS + preCSS + autoprefixer. CSS code is extracted on separated files.
+4. Redux for state management
+5. Authentication with [redux-auth-wrapper](https://github.com/mjrussell/redux-auth-wrapper)
+6. Tests with [Ava](https://github.com/avajs) + [Enzyme](https://github.com/airbnb/enzyme)
 
 TODO:
 
-4. Redux
-5. Server rendering
-6. Tests with tape + enzyme
+1. Server rendering
 
 ## Usage
 

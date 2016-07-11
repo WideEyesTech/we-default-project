@@ -1,24 +1,39 @@
 import {Link} from 'react-router'
-import React, { Component } from 'react'
+import React, { PropTypes } from 'react'
 
-export default class App extends Component {
-  render () {
-    return (
-      <section>
-        <header>
+const App = ({children}, {logout}) => {
+  return (
+    <section className='container'>
+      <section className='row'>
+        <header className='column'>
           <ul>
             <li>
-              <Link to='/'>Home</Link>
+              <Link activeClassName='active' to='/'>Home</Link>
             </li>
             <li>
-              <Link to='/about'>About</Link>
+              <Link activeClassName='active' to='/about'>About</Link>
+            </li>
+            <li>
+              <a href='#' onClick={logout}>Logout</a>
             </li>
           </ul>
         </header>
-        <section>
-          {this.props.children}
+      </section>
+      <section className='row'>
+        <section className='column'>
+          {children}
         </section>
       </section>
-    )
-  }
+    </section>
+  )
 }
+
+App.propTypes = {
+  children: PropTypes.element
+}
+
+App.contextTypes = {
+  logout: PropTypes.func.isRequired
+}
+
+module.exports = App

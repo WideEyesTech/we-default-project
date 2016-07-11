@@ -1,0 +1,64 @@
+
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+textarea,
+select {
+  width: 100%;
+  appearance: none;
+  box-shadow: none;
+  font-size: .85rem;
+  border-radius: 3px;
+  padding: .5rem 1.0rem;
+  border: 1px solid gray;
+  background-color: transparent;
+
+  &:focus {
+    border: 1px solid gray;
+    outline: 0;
+  }
+
+  &.invalid {
+    border-color: red;
+  }
+}
+
+select {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+}
+
+textarea {
+  padding-top: .5rem;
+  min-height: 6.5rem;
+  padding-bottom: .5rem;
+}
+
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+fieldset {
+  padding: 0;
+  border-width: 0;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  display: inline;
+}
+
+.label-inline {
+  margin-left: .5rem;
+  font-weight: normal;
+  display: inline-block;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}

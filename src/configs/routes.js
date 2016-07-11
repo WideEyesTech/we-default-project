@@ -1,9 +1,10 @@
-import App from 'components/App'
+import AppContainer from '../containers/App'
+import { isUserAuthenticated } from 'configs/auth'
 
 export default {
   childRoutes: [{
     path: '/',
-    component: App,
+    component: isUserAuthenticated(AppContainer),
     indexRoute: {
       getComponent (partialNextState, cb) {
         require.ensure([], (require) => {
@@ -15,9 +16,16 @@ export default {
       path: '/about',
       getComponent (partialNextState, cb) {
         require.ensure([], (require) => {
-          cb(null, require('components/About'))
+          cb(null, require('containers/About'))
         })
       }
     }]
+  }, {
+    path: '/login',
+    getComponent (partialNextState, cb) {
+      require.ensure([], (require) => {
+        cb(null, require('containers/Login'))
+      })
+    }
   }]
 }
