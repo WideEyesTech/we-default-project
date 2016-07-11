@@ -1,4 +1,5 @@
 import cn from 'classnames'
+import {Button} from 'wideeyes-ui'
 import React, { PropTypes } from 'react'
 
 const validate = values => {
@@ -86,7 +87,9 @@ class LoginForm extends React.Component {
           <input type='password' placeholder='Password' className={cn({invalid: errors.password})} onChange={this.handlePasswordChange} value={password} />
           {errors.password ? <small style={{color: 'red'}}>Invalid password: it must be, at least, 6 alphanumeric characters long</small> : null}
         </div>
-        <button type='submit' disabled={authenticating}>Submit</button>
+        <Button mode='primary' type='submit' disabled={authenticating}>
+          Submit
+        </Button>
       </form>
     )
   }

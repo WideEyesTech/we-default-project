@@ -36,14 +36,17 @@ module.exports = {
       },
       {
         test: /\.html$/,
+        exclude: /node_modules/,
         loader: 'html'
       },
       {
         loader: 'file?name=assets/[name].[hash].[ext]',
+        exclude: /node_modules/,
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/
       },
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         loader: ExtractTextPlugin.extract('style', 'css!postcss')
       }
     ]

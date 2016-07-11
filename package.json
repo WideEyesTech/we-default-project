@@ -44,8 +44,6 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "es6-promise": "^3.2.1",
-    "milligram": "^1.1.0",
-    "purecss": "^0.6.0",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-router": "^2.5.2",
@@ -53,7 +51,8 @@
     "redux-logger": "^2.6.1",
     "sinon": "^1.17.4",
     "we-vision-library": "^1.2.0",
-    "whatwg-fetch": "^1.0.0"
+    "whatwg-fetch": "^1.0.0",
+    "wideeyes-ui": "^1.0.1"
   },
   "standard": {
     "parser": "babel-eslint"
