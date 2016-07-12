@@ -4,8 +4,8 @@ import React, { PropTypes } from 'react'
 const Login = ({ authenticating, login }) => {
   return (
     <section className='container' style={{height: '100%'}}>
-      <section className='row' style={{height: '100%'}}>
-        <section className='column column-33 column-offset-33 col-center'>
+      <section className='row center' style={{height: '100%'}}>
+        <section className='col-xs-1-1 col-md-1-3 center'>
           <LoginForm authenticating={authenticating} login={login} />
         </section>
       </section>

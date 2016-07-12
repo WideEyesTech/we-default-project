@@ -1,2 +1,8 @@
+$su: 1rem;
 $black: #333;
 $white: white;
+
+$tablet: 768px;
+$mobile: 480px;
+$desktop: 992px;
+$desktopHD: 1200px;

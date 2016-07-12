@@ -5,7 +5,7 @@ const App = ({children}, {logout}) => {
   return (
     <section className='container'>
       <section className='row'>
-        <header className='column'>
+        <header className='col-1-1'>
           <ul>
             <li>
               <Link activeClassName='active' to='/'>Home</Link>
@@ -20,7 +20,7 @@ const App = ({children}, {logout}) => {
         </header>
       </section>
       <section className='row'>
-        <section className='column'>
+        <section className='col-1-1'>
           {children}
         </section>
       </section>
