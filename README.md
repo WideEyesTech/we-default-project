@@ -2,8 +2,6 @@
 
 ## Blueprint to build huge FE apps at [Wide eyes](http://wide-eyes.it)
 
-In development.
-
 **Features:**
 
 1. React components
@@ -15,8 +13,7 @@ In development.
 
 **TODO:**
 
-1. Server rendering
-2. Add tests for actions and reducers
+1. Server rendering (will probably end up in another branch)
 
 ## Usage
 
