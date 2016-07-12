@@ -2,6 +2,7 @@
   "name": "default-project",
   "version": "1.0.0",
   "description": "default blueprint to kickstart FE projects",
+  "repository": "git@github.com:WideEyesTech/we-default-project.git",
   "main": "src/index.js",
   "scripts": {
     "test": "ava | tap-dot",
