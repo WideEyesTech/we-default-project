@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions'
-import { setItem, deleteItem } from 'utils/localStorage'
+import { setItem, deleteItem } from '../utils/localStorage'
 
 export const user = handleActions({
   USER_LOGGED_OUT: (state, action) => {

@@ -8,8 +8,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  login: (data) => dispatch(userActions.login(data)),
-  getUser: (data) => dispatch(userActions.getUser(data))
+  login: data => dispatch(userActions.login(data)),
+  getUser: token => dispatch(userActions.getUser(token))
 })
 
 class LoginContainer extends Component {
