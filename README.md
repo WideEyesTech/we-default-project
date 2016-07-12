@@ -1,21 +1,27 @@
 # Default Project
 
-## Blueprint to build huge FE apps at [Wide eyes](http://wide-eyes.it)
-
-**Features:**
-
-1. React components
-2. Dynamic routes with react-router and Webpack code splitting
-3. PostCSS + preCSS + autoprefixer. CSS code is extracted on separated files.
-4. Redux for state management
-5. Authentication with [redux-auth-wrapper](https://github.com/mjrussell/redux-auth-wrapper)
-6. Tests with [Ava](https://github.com/avajs) + [Enzyme](https://github.com/airbnb/enzyme)
+Blueprint to build huge FE apps at [Wide eyes](http://wide-eyes.it)
 
 **TODO:**
 
 1. Server rendering (will probably end up in another branch)
 
-## Usage
+## Features
+
+Idea is to keep it simple, while providing a robust dev environment.
+
+Some features are:
+
+- React components
+- [Redux](https://github.com/reactjs/redux) for state management
+- [Redux thunks](https://github.com/gaearon/redux-thunk) + [fetch polyfill](https://github.com/github/fetch) + [es6 promises](https://github.com/stefanpenner/es6-promise) polyfill for easy async actions
+- [PostCSS](https://github.com/postcss/postcss-loader) + [preCSS](https://github.com/jonathantneal/precss) + [autoprefixer](https://github.com/postcss/autoprefixer) for *worriless* css development. CSS is extracted on a separate file at compilation, thanks to [webpack extract text plugin](https://github.com/webpack/extract-text-webpack-plugin).
+- Authentication with [redux-auth-wrapper](https://github.com/mjrussell/redux-auth-wrapper)
+- [Dynamic routes](https://github.com/reactjs/react-router/blob/master/docs/guides/DynamicRouting.md) with [react-router](https://github.com/reactjs/react-router) and [Webpack code splitting](https://webpack.github.io/docs/code-splitting.html)
+- html index page is generated at compilation thanks to [webpack html plugin](https://github.com/ampedandwired/html-webpack-plugin).
+- Tests with [Ava](https://github.com/avajs) + [Enzyme](https://github.com/airbnb/enzyme)
+
+## Development
 
 Clone repo and install dependencies with `npm install`
 
