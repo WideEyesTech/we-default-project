@@ -5,9 +5,9 @@
   "repository": "git@github.com:WideEyesTech/we-default-project.git",
   "main": "src/index.js",
   "scripts": {
-    "test": "ava | tap-spec",
-    "test:watch": "ava --watch",
-    "start": "webpack-dev-server --config configs/webpack.dev.js --inline --progress --port 3000",
+    "test": "CONFIG=$(pwd)/configs/webpack.ava.js NODE_ENV=AVA BABEL_DISABLE_CACHE=1 ava | tap-spec",
+    "test:watch": "CONFIG=$(pwd)/configs/webpack.ava.js NODE_ENV=AVA BABEL_DISABLE_CACHE=1 ava --watch",
+    "start": "rimraf dist && webpack-dev-server --config configs/webpack.dev.js --inline --progress --port 3000",
     "build": "rimraf dist && webpack --config configs/webpack.production.js --progress --profile --bail --release"
   },
   "author": "Gerard Clos",
@@ -15,11 +15,13 @@
   "devDependencies": {
     "autoprefixer": "^6.3.7",
     "ava": "^0.15.2",
+    "babel-cli": "^6.10.1",
     "babel-core": "^6.10.4",
     "babel-eslint": "^6.1.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-class-properties": "^6.10.2",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-plugin-webpack-loaders": "^0.7.0",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "css-loader": "^0.23.1",
@@ -35,12 +37,12 @@
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "redux-actions": "^0.10.1",
+    "redux-mock-store": "^1.1.2",
     "redux-thunk": "^2.1.0",
     "rimraf": "^2.5.3",
+    "sinon": "^1.17.4",
     "style-loader": "^0.13.1",
     "tap-dot": "^1.0.5",
-    "sinon": "^1.17.4",
-    "redux-mock-store": "^1.1.2",
     "tap-spec": "^4.1.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1",
@@ -63,26 +65,18 @@
   "ava": {
     "require": [
       "babel-register",
-      "./configs/testSetup.js"
+      "./configs/testSetup"
     ],
     "files": [
       "src/components/**/test/*.js",
       "src/reducers/test/*.js",
       "src/actions/test/*.js"
     ],
-    "babel": "inherit",
+    "babel": {
+      "babelrc": true
+    },
     "concurrency": 5,
     "failFast": true,
     "tap": true
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ],
-    "plugins": [
-      "transform-class-properties",
-      "transform-object-rest-spread"
-    ]
   }
 }

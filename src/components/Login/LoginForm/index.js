@@ -1,5 +1,6 @@
+import s from './styles'
 import cn from 'classnames'
-import {Button} from 'wideeyes-ui'
+import { Button } from 'wideeyes-ui'
 import React, { PropTypes } from 'react'
 
 const validate = values => {
@@ -76,7 +77,7 @@ class LoginForm extends React.Component {
     const {email, password, errors} = this.state
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className={s.root} onSubmit={this.handleSubmit}>
         <div className='form-group'>
           <label style={{color: errors.email ? 'red' : 'inherit'}}>Email</label>
           <input type='email' placeholder='Email' className={cn({invalid: errors.email})} onChange={this.handleEmailChange} value={email} />
