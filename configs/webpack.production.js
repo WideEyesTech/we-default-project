@@ -1,10 +1,11 @@
 var path = require('path')
 var webpack = require('webpack')
+var validate = require('webpack-validator')
 var webpackMerge = require('webpack-merge')
 var commonConfig = require('./webpack.common.js')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-module.exports = webpackMerge(commonConfig, {
+module.exports = validate(webpackMerge(commonConfig, {
   devtool: 'source-map',
 
   output: {
@@ -20,4 +21,4 @@ module.exports = webpackMerge(commonConfig, {
     new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
     new ExtractTextPlugin('[name].[hash].css')
   ]
-})
+}))

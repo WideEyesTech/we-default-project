@@ -1,9 +1,10 @@
 var path = require('path')
+var validate = require('webpack-validator')
 var webpackMerge = require('webpack-merge')
 var commonConfig = require('./webpack.common.js')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-module.exports = webpackMerge(commonConfig, {
+module.exports = validate(webpackMerge(commonConfig, {
   devtool: 'cheap-module-eval-source-map',
 
   output: {
@@ -21,4 +22,4 @@ module.exports = webpackMerge(commonConfig, {
     historyApiFallback: true,
     stats: 'minimal'
   }
-})
+}))

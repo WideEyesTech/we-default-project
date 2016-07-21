@@ -2,6 +2,7 @@ var path = require('path')
 var precss = require('precss')
 var webpack = require('webpack')
 var autoprefixer = require('autoprefixer')
+var validate = require('webpack-validator')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
@@ -11,7 +12,7 @@ var GLOBALS = {
   __DEV__: DEBUG
 }
 
-module.exports = {
+module.exports = validate({
   entry: {
     'app': './src/index.js',
     'vendor': './src/vendor.js',
@@ -70,4 +71,4 @@ module.exports = {
       template: 'src/index.html'
     })
   ]
-}
+})

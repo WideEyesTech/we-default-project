@@ -1,6 +1,7 @@
 var path = require('path')
+var validate = require('webpack-validator')
 
-module.exports = {
+module.exports = validate({
   resolve: {
     extensions: ['', '.js', '.css'],
     root: path.resolve(__dirname, '../src')
@@ -25,4 +26,4 @@ module.exports = {
       }
     ]
   }
-}
+})
