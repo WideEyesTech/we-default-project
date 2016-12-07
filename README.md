@@ -4,10 +4,10 @@ Blueprint to build huge FE apps at [Wide eyes](http://wide-eyes.it)
 
 **TODO:**
 
-1. Server rendering (will probably end up in another branch)
-2. Integrate React Hot Realoading 3 beta
-3. Sync redux store with routes with react-react-router-redux
-4. Move test runner to Jest
+1. Move test runner to Jest
+2. Server rendering (will probably end up in another branch)
+3. Integrate React Hot Realoading 3 beta
+4. Sync redux store with routes with react-react-router-redux
 5. Move to webpack 2 beta
 
 ## Features
