@@ -6,7 +6,11 @@ test('should return the initial state', t => {
 })
 
 test('should handle USER_LOGGED_IN_REQUESTED', t => {
-  t.deepEqual(reducer([], {type: 'USER_LOGGED_IN_REQUESTED'}), {authenticating: true})
+  t.deepEqual(reducer([], {
+    type: 'USER_LOGGED_IN_REQUESTED'
+  }), {
+    authenticating: true
+  })
 })
 
 test('should handle USER_LOGGED_IN_COMPLETED', t => {
@@ -23,9 +27,13 @@ test('should handle USER_LOGGED_IN_COMPLETED', t => {
 })
 
 test('should handle USER_LOGGED_IN_FAILED', t => {
-  t.deepEqual(reducer([], {type: 'USER_LOGGED_IN_FAILED', payload: 'unauthorized'}), {})
+  t.deepEqual(reducer([], {
+    type: 'USER_LOGGED_IN_FAILED', payload: 'unauthorized'
+  }), {})
 })
 
 test('should handle USER_LOGGED_OUT', t => {
-  t.deepEqual(reducer([], {type: 'USER_LOGGED_OUT'}), {})
+  t.deepEqual(reducer([], {
+    type: 'USER_LOGGED_OUT'
+  }), {})
 })
