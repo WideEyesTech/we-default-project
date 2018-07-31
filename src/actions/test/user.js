@@ -15,7 +15,7 @@ test('create USER_LOGGED_OUT when logout has completed', t => {
   t.deepEqual(store.getActions(), [{type: 'USER_LOGGED_OUT'}])
 })
 
-test('creates USER_LOGGED_IN_REQUESTED when login has completed', t => {
+test('creates USER_LOGGED_IN_REQUESTED when login has completed', async t => {
   const token = 'foo'
   const store = mockStore({user: {}})
 
@@ -24,7 +24,8 @@ test('creates USER_LOGGED_IN_REQUESTED when login has completed', t => {
     .reply(200, {
       login: 'ok',
       access_token: token
-    })
+    },
+    { 'Access-Control-Allow-Origin': '*','Content-type': 'application/json'})
 
   const expectedActions = [
     { type: 'USER_LOGGED_IN_REQUESTED' }
@@ -32,16 +33,27 @@ test('creates USER_LOGGED_IN_REQUESTED when login has completed', t => {
 
   return store.dispatch(userActions.login({}))
     .then(() => t.deepEqual(store.getActions(), expectedActions))
-    .catch((e) => t.fail(e.message))
+    .catch((e) => {
+            console.log(e.stack);t.fail(e.stack)
+        })
 })
 
-test('creates USER_LOGGED_IN_COMPLETED when getUser has completed', t => {
+test('creates USER_LOGGED_IN_COMPLETED when getUser has completed', async t => {
   const token = 'foo'
   const store = mockStore({user: {}})
+  var options_scope = nock('http://api.wide-eyes.it').log(console.log)
+    .intercept('/users/show', 'OPTIONS').times(1)
+    .reply(204,'',
+               { 'Access-Control-Allow-Origin': '*'})
 
-  nock('http://api.wide-eyes.it')
-    .get('/users/show')
-    .reply(200, { 'name': 'John Smith' })
+  var get_scope = nock('http://api.wide-eyes.it').log(console.log)
+    .get('/users/show').times(2)
+    .reply(200,
+    { 'name': 'John Smith' },
+    { 'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-type, Authorization',
+    'Content-type': 'application/json'})
 
   const expectedActions = [
     { type: 'USER_LOGGED_IN_COMPLETED', payload: {name: 'John Smith', token} }
@@ -49,7 +61,11 @@ test('creates USER_LOGGED_IN_COMPLETED when getUser has completed', t => {
 
   return store.dispatch(userActions.getUser(token))
     .then(() => t.deepEqual(store.getActions(), expectedActions))
-    .catch((e) => t.fail(e.message))
+    .catch((e) => {
+        options_scope.isDone();
+        get_scope.isDone();
+        console.log(e.stack);
+        t.fail(e.message)})
 })
 
 test('creates USER_LOGGED_IN_FAILED when getUser has failed', t => {

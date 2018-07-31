@@ -1,9 +1,6 @@
 import test from 'ava'
 import { user as reducer } from '../user'
 
-test('should return the initial state', t => {
-  t.deepEqual(reducer(undefined, {}), {})
-})
 
 test('should handle USER_LOGGED_IN_REQUESTED', t => {
   t.deepEqual(reducer([], {
