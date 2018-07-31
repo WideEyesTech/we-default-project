@@ -1,5 +1,7 @@
 # Default Project
 
+[![Build Status](https://travis-ci.org/WideEyesTech/we-default-project.svg?branch=master)](https://travis-ci.org/WideEyesTech/we-default-project)
+
 Blueprint to build huge FE apps at [Wide eyes](http://wide-eyes.it)
 
 **TODO:**
